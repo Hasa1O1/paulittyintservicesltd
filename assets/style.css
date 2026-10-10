@@ -46,14 +46,17 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .values span{padding:.55rem 1.2rem;border-radius:99px;background:#fff;font-weight:600;box-shadow:inset 0 0 0 2px var(--cyan)}
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:3rem}.vm h2{font-weight:500;color:#3d3d94;font-size:1.8rem;margin-bottom:.8rem}
 /* portfolio */
-.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
-.filters button{font:inherit;font-weight:600;padding:.55rem 1.2rem;border-radius:99px;border:2px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer}
-.filters button[aria-pressed=true]{background:var(--teal);color:#fff}
 .gallery{columns:4 240px;column-gap:1rem}
 .gallery figure{break-inside:avoid;margin:0 0 1rem}
-.gallery button{display:block;width:100%;padding:0;border:0;background:var(--mist);border-radius:12px;overflow:hidden;cursor:zoom-in}
-.gallery img{width:100%;height:auto;transition:transform .3s}.gallery button:hover img{transform:scale(1.04)}
-.gallery figure[hidden]{display:none}
+.gallery button{position:relative;display:block;width:100%;padding:0;border:0;background:var(--mist);border-radius:12px;overflow:hidden;cursor:zoom-in}
+.gallery img{width:100%;height:auto;display:block}
+.gallery-caption{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.1rem 1.25rem;color:#fff;background:linear-gradient(90deg,#00002ee6 20%,#00002e99);opacity:1;transition:opacity .25s ease;pointer-events:none}
+.gallery-caption strong{display:block;font-size:1rem;font-weight:700;line-height:1.25;margin-bottom:.35rem}
+.gallery-caption>span{font-size:.88rem;font-weight:400;line-height:1.45;color:#e8ecf4}
+@media(hover:hover) and (pointer:fine){
+.gallery-caption{opacity:0}
+.gallery button:hover .gallery-caption,.gallery button:focus-visible .gallery-caption{opacity:1}
+}
 dialog{border:0;padding:0;background:none;max-width:min(92vw,900px);margin:auto}
 dialog::backdrop{background:#000000d9}
 dialog img{max-height:86vh;width:auto;margin:auto;border-radius:10px}
@@ -68,7 +71,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--teal);outline:0}
 /* footer */
 footer{background:var(--navy);color:#c9d0e6;padding:3.5rem 0 2rem}
 .foot{display:grid;grid-template-columns:2fr 1fr 2fr;gap:2.5rem}
-footer img{height:40px;width:auto;margin-bottom:1rem}footer a{text-decoration:none}footer a:hover{color:#fff}
+footer img{height:44px;width:auto;max-width:min(100%,220px);margin-bottom:1rem}footer a{text-decoration:none}footer a:hover{color:#fff}
 footer ul{list-style:none;padding:0}footer li{margin-bottom:.4rem}
 .copy{border-top:1px solid #ffffff22;margin-top:2.5rem;padding-top:1.5rem;font-size:.9rem}
 @media(max-width:900px){

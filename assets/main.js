@@ -4,10 +4,6 @@ mb&&mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.set
 const gal=$('.gallery');
 if(gal){
   const dlg=$('dialog'),big=$('img',dlg);
-  $$('.filters button').forEach(b=>b.addEventListener('click',()=>{
-    $$('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-    $$('figure',gal).forEach(f=>f.hidden=b.dataset.f!=='all'&&f.dataset.cat!==b.dataset.f);
-  }));
   gal.addEventListener('click',e=>{const i=e.target.closest('button img');if(i){big.src=i.src;big.alt=i.alt;dlg.showModal()}});
   dlg.addEventListener('click',()=>dlg.close());
 }
