@@ -158,6 +158,9 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .lightbox .lb-prev{left:1rem}.lightbox .lb-next{right:1rem}
 /* contact */
 .contact{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,6vw,5rem)}
+.split>*,.contact>*{min-width:0}
+.info a{overflow-wrap:anywhere}
+main,footer{overflow-x:clip}
 .info dt{font-weight:700;color:var(--teal);margin-top:1.4rem}.info dd{margin:0}.info a{text-decoration:none}.info a:hover{text-decoration:underline}
 form{display:grid;gap:1.1rem;padding:clamp(1.5rem,4vw,2.5rem);border-radius:22px;background:#fff;box-shadow:0 40px 80px -50px #00002e;border:1px solid #e3e7f0}
 label{display:grid;gap:.4rem;font-weight:600}
